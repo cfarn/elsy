@@ -15,7 +15,7 @@ class App extends React.Component {
   render() {
     return (
       <div className="container-fluid">
-          <div className="raw">
+          <div className="row">
             <p>Heart : {heartMin}</p>
             <p>Temperature : {tempMin}</p>
             <p>Steps : {stepsMin}</p>
@@ -29,7 +29,6 @@ class App extends React.Component {
             <Box icon ="wb_sunny" color="yellow" value={-10} unit="°C"/>
           </div>
       </div>
-    
     );
   }
 }
