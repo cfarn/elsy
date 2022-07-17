@@ -11,7 +11,8 @@ class Box extends React.Component {
             <p>{this.props.value} {this.props.unit}</p>
             <>
             {/* afficher un input range sur toutes les cases sauf water */}
-            {this.props.icon !== "local_drink" && <input type="range" min={this.props.min} max={this.props.max} value={this.props.value} onChange={this.props.onChange} step={this.props.icon === "directions_walk" ? 1000 : null}/>}
+            {/* ajouter un step: 1000 à l'input range si c'est le box steps. Valeur min de step: 1 */}
+            {this.props.icon !== "local_drink" && <input type="range" min={this.props.min} max={this.props.max} value={this.props.value} onChange={this.props.onChange} step={this.props.icon === "directions_walk" ? 1000 : 1}/>}
             </>
          </div>
       )
