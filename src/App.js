@@ -57,9 +57,18 @@ class App extends React.Component {
     }
 
     this.setState({
-      water : drink
+      // arrondi à 2 chiffres après la virgule
+      water : drink.toFixed(2)
     })
   }
+
+  // animation 1
+  // box.addEventListener("mouseEnter", function(){
+  //     wb_sunny.classList.add("rotate")
+  // })
+  // iconRotation = () => {
+    
+  // }
 
 
   render() {
