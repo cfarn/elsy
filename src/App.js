@@ -24,19 +24,24 @@ class App extends React.Component {
   }
 
   // méthode pour changer le state heart avec la valeur de l'input
+  // pour éviter un décalage dans calculateWater, ajouter une fonction callback en paramètre de la fonction. La 2ème fonction s'exécutera quand la 1ère sera terminée.
+  // imput renvoie un string donc ajouter number pour être sûr de recevoir attendre
   onHeartChange(e) {
-    this.setState({ heart: e.target.value })
-    this.calculateWater()
+    this.setState({ heart: Number(e.target.value) }, () => {
+      this.calculateWater()
+    })
   }
   // méthode pour changer le state steps avec la valeur de l'input
   onStepsChange(e) {
-    this.setState({ steps: e.target.value })
-    this.calculateWater()
+    this.setState({ steps: Number(e.target.value) }, () => {
+      this.calculateWater()
+    })
   }
   // méthode pour changer le state temperature avec la valeur de l'input
   onTemperatureChange(e) {
-    this.setState({ temperature: e.target.value })
-    this.calculateWater()
+    this.setState({ temperature: Number(e.target.value) }, () => {
+      this.calculateWater()
+    })
   }
 
   // méthode pour calculer l'eau à boire en fonction des autres states
